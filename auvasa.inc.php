@@ -20,12 +20,13 @@ class auvasa {
 	function parada($codigoParada=false){
 		$url = ($codigoParada) ? 
 			str_replace('%codigoParada%', base64_encode(base64_encode($codigoParada)), $this->url['parada']) : 
-			$this->url['paradas'];
+			$this->url['paradas']
+		;
 		return $this->call($url);
 	}
 	
 	function linea($linea=false){
-		$url = ($codigoParada) ? 
+		$url = ($linea) ? 
 			str_replace('%linea%', $linea, $this->url['linea']) : 
 			$this->url['lineas'];
 		return $this->call($url);

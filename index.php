@@ -14,8 +14,37 @@
 #	'http://www.auvasa.es/rss.asp', //noticias
 
 include('auvasa.inc.php');
+$auv = new auvasa();
 
-$auvasa = new auvasa();
-print_r($auvasa->parada(565));
+# Listado completo de paradas
+$paradas = $auv->parada();
+
+# Informacion de una sola parada, datos y timepo de llegada de los autobuses
+$parada = $auv->parada(565);
+
+# Listado de lineas
+$lineas = $auv->linea();
+
+# Listado de paradas desde una linea, con trayectos y orden
+$linea = $auv->linea('P1');
+
+# Informacion y saldo de la tarjeta de un usuario (requiere el numero de tarjeta)
+$tarjeta = $auv->tarjeta(1234456789);
+
+# Horarios de las paradas (cuando comienza el servicio, termina...)
+$horario = $auv->horario();
+
+# Listado de noticias
+$noticias = $auv->noticias();
+
+print_r(array(
+	'paradas'	=> $paradas,
+	'parada'	=> $parada,
+	'lineas'	=> $lineas,
+	'linea'		=> $linea,
+	'tarjeta'	=> $tarjeta,
+	'horario'	=> $horario,
+	'noticias'	=> $noticias
+));
 
 ?>
