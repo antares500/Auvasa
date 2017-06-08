@@ -6,11 +6,11 @@ class auvasa {
 	private
 		$url = array(
 			
-			'paradas'	=> 'http://www.auvasa.es/dataapp/Paradas.xml',					//listado completo de paradas
+			'paradas'	=> 'http://www.auvasa.es/dataapp/Paradas.xml',			//listado completo de paradas
 			'parada'	=> 'http://www.auvasa.es/rssparada.asp?codigo=%codigoParada%',	//datos y timepo de llegada de los autobuses
 				
-			'lineas'	=>	'http://www.auvasa.es/dataapp/Lineas.xml',					//listado de lineas
-			'linea'		=>	'http://www.auvasa.es/rsstrayectos.asp?codigo=%linea%',		//listado de paradas desde una linea, con trayectos y orden
+			'lineas'	=> 'http://www.auvasa.es/dataapp/Lineas.xml',			//listado de lineas
+			'linea'		=> 'http://www.auvasa.es/rsstrayectos.asp?codigo=%linea%',	//listado de paradas desde una linea, con trayectos y orden
 			
 			'horarios'	=> 'http://www.auvasa.es/dataapp/Horarios.xml',
 			'tarjeta'	=> 'http://2.139.171.116:3506/rsstarjeta.asp?codigo=%tarjeta%',
@@ -32,7 +32,7 @@ class auvasa {
 		return $this->call($url);
 	}
 	
-	function horario(){			return $this->call($this->url['horarios']);	}
+	function horario(){		return $this->call($this->url['horarios']);	}
 	function tarjeta($tarjeta){	return $this->call(str_replace('%tarjeta%', base64_encode(base64_encode($tarjeta)), $this->url['tarjeta']));	}
 	function noticias(){		return $this->call($this->url['noticias']);	}
 	
