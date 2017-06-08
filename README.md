@@ -1,7 +1,7 @@
 # Auvasa
 Unoficial API of Auvasa (Autobuses urbanosde valladolid)
 
-Clase no oficial para la conuslta de lineas, horarios, posiciones y dem´ás información sobre la red de autobuses de Valladolid
+Clase no oficial para la conuslta de lineas, horarios, posiciones y demás información sobre la red de autobuses de Valladolid
 
 Ejemplos:
 ```php
